@@ -1,0 +1,44 @@
+[
+  { 
+      "name": "Nawt", 
+      "position": "Point Guard",
+      "number": 0,
+      "color": "Red",
+      "image": "red.webp",
+      "adopted": true
+  },
+  { 
+      "name": "Blanko", 
+      "position": "Shooting Guard",
+      "number": 0,
+      "color": "Blue",
+      "image": "blue.webp",
+      "adopted": false
+  },
+  { 
+      "name": "Bupkus", 
+      "position": "Small Forward",
+      "number": 0,
+      "color": "Purple",
+      "image": "purple.webp",
+      "adopted": true
+  },
+  { 
+      "name": "Bang", 
+      "position": "Power Forward",
+      "number": 5,
+      "color": "Green",
+      "image": "green.webp",
+      "adopted": false
+  },
+  { 
+      "name": "Pound", 
+      "position": "Center",
+      "number": 0,
+      "color": "Orange",
+      "image": "orange.webp",
+      "adopted": false
+  }
+]
+
+
