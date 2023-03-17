@@ -1,8 +1,15 @@
+<%- include('header.ejs') %>
 <inner-column>
-	<mast-head>
-		<p class="attention-voice">Site Header</p>
-		<%- include('site-menu.ejs') %>
-	</mast-head>
+	<h1 class='loud-voice'><%=foundMonster.name %></h1>
+			
+	<picture>
+		<img src="/assets/<%=foundMonster.image %> " alt="">
+	</picture>
+	
+	<p class='normal-voice'> Position: <%=foundMonster.position %> </p>
+	<p class='normal-voice'> Number: <%=foundMonster.number %> </p>
+	<p class='normal-voice'> Color: <%=foundMonster.color %> </p>
+
 </inner-column>
 
-<h1 class='loud-voice'>Detail</h1>
+<%- include('footer.ejs') %>

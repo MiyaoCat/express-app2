@@ -1,0 +1,41 @@
+<%- include('header.ejs') %>
+
+
+<inner-column>
+<h1 class="loud-voice">Meet the Monstars</h1>
+	<ul class="card-list">
+		<% monsters.forEach(function(monster) { 
+				function adoptedStyle() {
+					if (monster.adopted) {
+						return "adopted";
+					}
+				}
+			%>
+			<monster-card class="<%=monster.color %>">
+				<li class="monster-card <%=adoptedStyle() %>">
+					<picture>
+						<img src="assets/<%=monster.image %>" alt="">
+					</picture>
+					
+					<h3 class="attention-voice"> 
+						<%=monster.name %> 
+					</h3>
+
+					<p class='normal-voice'> 
+						Position: <%=monster.position %> 
+					</p>
+
+					<p class='normal-voice'> 
+						Number: <%=monster.number %> 
+					</p>
+
+					<p class='normal-voice'> 
+						Color: <%=monster.color %> 
+					</p>
+				</li>
+			</monster-card>		
+
+		<% }); %>
+	</ul>
+</inner-column>
+

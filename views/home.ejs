@@ -1,21 +1,32 @@
 <%- include('header.ejs') %>
+
 <main>
 	<inner-column>
-		<h1>Home</h1>
+		<h1 class="loud-voice">Adopt a Monstar</h1>
 	</inner-column>
 
 	<inner-column>
 	<ul class="card-list">
-		<% monstarsData.forEach(function(player) { %>
+		<% monsters.forEach(function(monster) { %>
 			
-			<li class="player-card">
-				<img src="assets/<%=player.image %>" alt="">
-				<h3 class="attention-voice"> <%=player.name %> </h3>
-				<p> Position: <%=player.position %> </p>
-				<p> Number: <%=player.number %> </p>
-				<p> Color: <%=player.color %> </p>
-				
-			</li>			
+			<monster-card>
+					<li>
+						<a href="monsters/<%= monster.slug %>">
+							<h3 class="attention-voice"> <%=monster.name %> 
+							</h3>
+						</a>
+						<p class="normal-voice"> Position: <%=monster.position %> </p>
+						<p class="normal-voice"> Number: <%=monster.number %> </p>
+						<p class="normal-voice"> Favorite Color: <%=monster.color %> </p>
+					
+						
+							<% if(monster.adopted) { %> 
+								<p class="normal-voice">I'm adopted</p>
+							<% } else { %>
+								<p class="normal-voice">I need a home!</p>
+							<% } %>
+					</li>
+				</monster-card>	
 
 		<% }); %>
 	</ul>		

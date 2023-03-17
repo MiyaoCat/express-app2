@@ -21,12 +21,14 @@ p a {
 picture {
 	display: block;
 	overflow: hidden;
+	border-radius: var(--corners);	
 }
 
 img {
 	display: block;
 	width: 100%;
 	height: auto;
+	border-radius: var(--corners);	
 }
 
 svg {

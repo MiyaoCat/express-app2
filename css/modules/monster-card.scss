@@ -1,0 +1,15 @@
+monster-card {
+	display: block;
+	border-radius: var(--corners);
+	border: 2px solid var(--ink);
+	padding: 10px;
+	background-color: #ddd5e9;
+	box-shadow: 0 0 10px hotpink;	
+	max-width: 300px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+monster-card + monster-card {
+	margin-top: 15px;
+}

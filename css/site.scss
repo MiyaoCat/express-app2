@@ -1,28 +1,27 @@
 /* P reset */
-@import 'preset.css';
+@import 'preset';
 
 /* Setup */
-@import 'setup.css';
+@import 'setup';
 
 /* Ssetings */
-@import 'settings.css';
-@import 'developer-styles.css';
+@import 'settings';
+@import 'developer-styles';
 
 
 /* Structure */
-@import 'structure.css';
+@import 'structure';
 
 /* Typography */
-@import 'typography.css';
+@import 'typography';
 
 
 /* Sections and more 
 stuff */
-@import 'components.css';
-@import 'modules.css';
+@import 'modules/modules';
 
-@import 'footer.css';
-@import 'header.css';
+@import 'footer';
+@import 'header';
 
 /* then other contextual styles */
 body {

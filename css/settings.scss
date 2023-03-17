@@ -8,26 +8,22 @@ html {
 
 	--shadow: rgba(0,0,0,.8);
 
+	--corners-small: 6px;
 	--corners: 10px; /* or whatevers */
 
 	--standard: 1140px;
 	--tight: 800px;
-	--wide: 98vw;
+	--wide: 96vw;
 
-	--paper: hsl(37, 32%, 92%); /* light brown */
+	--paper: hsla(264, 100%, 27%, 1.00);
 
 	--ink: black;
-	--highlight: hsl(360, 100%, 39%); /* red */
+	--highlight: limegreen; 
 }
 
 @media (prefers-color-scheme: dark) {
 	html {
-		--paper: hsl(28, 17%, 30%); /* dark brown */
-		--ink: white;
-		--highlight: yellow;
-	}
-
-	.logo {
-		fill: white;
+		--paper: hsla(264, 100%, 27%, 1.00); 
+		--highlight: limegreen;
 	}
 }

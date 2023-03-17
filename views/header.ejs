@@ -6,19 +6,17 @@
 
 	<meta property="og:image" content="[IMAGE URL]">
 	<meta name="description" content="[SHORT PAGE DESCRIPTION]">
-	<title>Figma to Code</title>
-
-	<link rel="stylesheet" href="site.css">
+	<title>Monstars</title>
+	<link rel="icon" type="image/x-icon" href="/assets/logo.svg">
+	<link href="https://api.fontshare.com/v2/css?f[]=clash-display@200,400,700,600,1,300&f[]=bevellier@401,300,500,600,400,501,301,601&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="/site-minified.css">
 </head>
 
 <body>
 	<header class="site-header">
+	<inner-column>
+			
+		<%- include('site-menu.ejs') %>
 
-		<inner-column>
-			<mast-head>
-				<p class="attention-voice">Site Header</p>
-				<%- include('site-menu.ejs') %>
-			</mast-head>
-		</inner-column>
-		
+	</inner-column>
 	</header>

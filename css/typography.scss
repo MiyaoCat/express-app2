@@ -1,11 +1,9 @@
 
 html {
-	--marker: Permanent Marker, Noto Serif;
-	--sans-serif: Encode Sans, Helvetica;
-	--serif: Noto Serif Display, Old Standard TT, Times New Roman;
-
-	
+	--header: Clash Display;
+	--paragraph: Bevellier;
 }
+
 a {
 	font-family: var(--sans-serif);
 	text-transform: uppercase;
@@ -33,17 +31,26 @@ a:hover {
 
 /* Header text or similar */
 .loud-voice {
-
+	font-size: clamp(38px, 10vw, 48px);
+	font-weight: 700;
+	text-shadow: 2px 2px 3px var(--highlight);
+	font-family: var(--header);
+	margin-bottom: 7px;
+	color: var(--ink-reverse);
 }
 
 /* Sub-header text or similar */
 .attention-voice {
-	font-family: var(--sans-serif);
+	font-size: 1.5em;
+	font-family: var(--header);
+	font-weight: 700;
 }
 
 /* Paragraph text or similar */
 .normal-voice {
-
+	font-size: 1.1em;
+	letter-spacing: .1rem;
+	font-family: var(--paragraph);
 }
 
 /* Caption text or similar */
@@ -68,9 +75,9 @@ a:hover {
 /* this is just a loose setting for now */
 /* or smaller group of article-like styles such as a <text-content> custom element */
 p + p {
-	margin-top: ;
+	
 }
 
 h2 + p {
-	margin-top: ;
+	
 }

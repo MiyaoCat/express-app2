@@ -15,24 +15,14 @@ inner-column {
 	margin-right: auto;
 	margin-left: auto;
 	padding: 0 5px;
+	border: 2px solid red;
 }
 
-@media (min-width: 600px) {
-	inner-column {
-		width: var(--tight);
-	}
-	.heading inner-column {
-		width: var(--wide);
-		text-align: center;
-	}
+.adopted {
+/*	background-color: grey;*/
+/*	opacity: .5;*/
 }
 
-inner-column.tight {
-	max-width: var(--tight);
-}
-
-.site-header {
-	position: sticky;
-	top: 0;
-	z-index: 5;
+.Green {
+	background-color: hsla(96, 44%, 49%, .700);
 }
