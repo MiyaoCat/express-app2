@@ -288,44 +288,26 @@ footer p {
   box-shadow: 0 2px 3px rgba(0, 0, 0, 0.3);
   background-color: var(--paper);
 }
-
 .site-header inner-column {
   display: flex;
-  flex-direction: row;
+  jstify-content: center;
   align-items: center;
   border: 2px solid black;
 }
-
-.site-header img {
-  max-width: 80px;
-  border-radius: 50%;
-  overflow: hidden;
-  margin-left: 15px;
-  /*height: 6vh;*/
-}
-
-.site-header nav {
+.site-header inner-column nav {
   flex-grow: 1;
   display: flex;
-  margin: 0 15px;
 }
-
-.site-header ul {
+.site-header inner-column nav ul {
   display: flex;
   justify-content: flex-end;
   align-items: center;
   flex-grow: 1;
   gap: 10px;
 }
-
-.site-header li {
+.site-header inner-column nav ul li {
   padding: 10px;
   list-style-type: none;
-}
-
-.logo {
-  max-width: 50px;
-  margin: 5px 0 5px 10px;
 }
 
 /* - - - HEADER LARGE SCREEN - - - */

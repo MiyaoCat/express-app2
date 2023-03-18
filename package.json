@@ -6,8 +6,9 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app.js",
-    "watch": "npx nodemon --exec sass css/site.scss css/site-minified.css"
+    "start:express": "npx nodemon",
+    "watch:sass": "npx nodemon --exec sass css/site.scss css/site-minified.css",
+    "start": "npm-run-all --parallel start:express watch:sass"
   },
   "author": "",
   "license": "ISC",
