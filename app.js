@@ -6,6 +6,12 @@ import monstersData from './monstersData.json' assert { type: 'json' };
 import { URL } from 'node:url';
 const __dirname = new URL ('.', import.meta.url).pathname;
 
+import contentful from 'contentful';
+const client = contentful.createClient({
+	space: 'pbgxh8642zcb',
+	accessToken: '9oUj-6qcdUZu7naTzVd8tpT7qhDAjKxcrvRECYHJbwU'
+})
+
 const app = express();
 console.log("- - - - LET'S GET STARTED - - - - ");
 
@@ -17,12 +23,34 @@ app.listen(PORT, function() {
 app.set('view engine', 'ejs');
 
 //Static files setup
-app.use(express.static('public'));
-app.use(express.static('css'));
+app.use( express.static('public') );
+app.use( express.static('css') );
 
 //Page Routes
+//node + express
 app.get('/', function(request, response) {
-	response.render('home', { monsters: monstersData });
+	//contentful
+	client
+	  .getEntries({
+	    content_type: 'monster',
+	  })
+	  .then(function (entries) {
+
+	    //Get the list of monsters
+	   var newMonsterData = entries.items.map( function(item) {
+	    	console.log(item.fields.story.content);
+	    		return {
+	    			name: item.fields.name,
+	    			birthday: item.fields.birthday,
+	    			story: item.fields,
+	    			adopted: item.fields.adopted,
+	    		}
+	    })
+	    //Render each monster 
+	   // console.log(newMonsterData);
+	   response.render('home', {monsters: newMonsterData} );
+	  });
+
 })
 
 app.get('/monsters', function(request, response) {
