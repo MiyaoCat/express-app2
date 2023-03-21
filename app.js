@@ -42,7 +42,7 @@ app.get('/', function(request, response) {
 	    		return {
 	    			name: item.fields.name,
 	    			birthday: item.fields.birthday,
-	    			story: item.fields,
+	    			story: item.fields.content,
 	    			adopted: item.fields.adopted,
 	    		}
 	    })
