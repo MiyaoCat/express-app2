@@ -47,7 +47,7 @@ app.get('/', function(request, response) {
 	    		}
 	    })
 	    //Render each monster 
-	   // console.log(newMonsterData);
+	   console.log(newMonsterData);
 	   response.render('home', {monsters: newMonsterData} );
 	  });
 
