@@ -7,6 +7,7 @@ import { URL } from 'node:url';
 const __dirname = new URL ('.', import.meta.url).pathname;
 
 import contentful from 'contentful';
+
 const client = contentful.createClient({
 	space: 'pbgxh8642zcb',
 	accessToken: '9oUj-6qcdUZu7naTzVd8tpT7qhDAjKxcrvRECYHJbwU'
@@ -30,28 +31,30 @@ app.use( express.static('css') );
 //node + express
 app.get('/', function(request, response) {
 	//contentful
-	client
-	  .getEntries({
+	client.getEntries({
 	    content_type: 'monster',
-	  })
-	  .then(function (entries) {
+   })
+   .then(function (data) {
 
-	    //Get the list of monsters
-	   var newMonsterData = entries.items.map( function(item) {
-	    	console.log(item.fields.story.content);
-	    		return {
-	    			name: item.fields.name,
-	    			birthday: item.fields.birthday,
-	    			story: item.fields.content,
-	    			adopted: item.fields.adopted,
-	    		}
-	    })
-	    //Render each monster 
-	   console.log(newMonsterData);
-	   response.render('home', {monsters: newMonsterData} );
-	  });
+    //Get the list of monsters
+   var newMonsterData = data.items.map( function(item) {
+    	console.log(item.fields);
+    		return {
+    			name: item.fields.name,
+    			birthday: item.fields.birthday,
+    			story: item.fields.story.content,
+    			adopted: item.fields.adopted,
+    			portrait: item.fields.portrait.fields.file.url,
+    		}
+    })
+    //Render each monster 
+   // console.log(newMonsterData);
+   response.render('home', {monsters: newMonsterData} );
+   console.log("new monster data: ", newMonsterData);
+   })
+   .catch(console.error)
 
-})
+});
 
 app.get('/monsters', function(request, response) {
 	response.render("monsters", { monsters: monstersData });

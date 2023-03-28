@@ -10,23 +10,27 @@
 		<% monsters.forEach(function(monster) { %>
 			
 			<monster-card>
-					<li>
-						<a href="monsters/<%= monster.slug %>">
-							<h3 class="attention-voice"> <%=monster.name %> 
-							</h3>
-						</a>
-						<p class="normal-voice"> Position: <%=monster.position %> </p>
-						<p class="story normal-voice"> story: <%=monster.story %> </p>
-						<p class="normal-voice"> Birthday: <%=monster.birthday %> </p>
-					
-						
-							<% if(monster.adopted) { %> 
-								<p class="normal-voice">I'm adopted</p>
-							<% } else { %>
-								<p class="normal-voice">I need a home!</p>
-							<% } %>
-					</li>
-				</monster-card>	
+				<li>
+					<picture>
+						<img src="<%=monster.portrait %>" alt="">
+					</picture>
+
+					<a href="monsters/<%= monster.slug %>">
+						<h3 class="attention-voice"> <%=monster.name %> 
+						</h3>
+					</a>
+					<p class="normal-voice"> Position: <%=monster.position %> </p>
+					<p class="normal-voice"> Birthday: <%=monster.birthday %> </p>
+				
+					<p class="normal-voice"> Story: <%=monster.story %> </p>
+
+					<% if(monster.adopted) { %> 
+						<p class="normal-voice">I'm adopted</p>
+					<% } else { %>
+						<p class="normal-voice">I need a home!</p>
+					<% } %>
+				</li>
+			</monster-card>	
 
 		<% }); %>
 	</ul>		
